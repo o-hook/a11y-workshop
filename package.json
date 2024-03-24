@@ -1,0 +1,56 @@
+{
+  "name": "@h2ok/a11y-workshop",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Demo application to show worst and best practices of accessibility",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h2ok/a11y-workshop.git"
+  },
+  "author": "Oliver Hook - H2OK Consulting",
+  "license": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License",
+  "contributors": [
+    "Oliver Hook <consulting@h2ok.de"
+  ],
+  "watch": {
+    "build:index": {
+      "patterns": [
+        "public"
+      ],
+      "extensions": "html",
+      "runOnChangeOnly": true
+    },
+    "build:css": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "scss",
+      "runOnChangeOnly": true
+    },
+    "build:js": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "js",
+      "runOnChangeOnly": true
+    }
+  },
+  "scripts": {
+    "start": "run-p eleventy:dev sass:dev js:dev",
+    "build": "run-s eleventy:build sass:build js:build",
+    "eleventy:dev": "eleventy --serve",
+    "eleventy:build": "eleventy",
+    "sass:dev": "sass --watch --update --embed-source-map --style=expanded --load-path=node_modules src/scss/accessible/index.scss:public/styles/accessible/styles.css & sass --watch --update --embed-source-map --style=expanded --load-path=node_modules src/scss/inaccessible/index.scss:public/styles/inaccessible/styles.css",
+    "sass:build": "sass --no-source-map --style=compressed --load-path=node_modules src/scss/accessible/index.scss:public/styles/accessible/styles.css & sass --no-source-map --style=compressed --load-path=node_modules src/scss/inaccessible/index.scss:public/styles/inaccessible/styles.css",
+    "js:dev": "esbuild src/js/*.js --format=esm --bundle=true --splitting=true --outdir=public/js --watch --sourcemap=inline",
+    "js:build": "esbuild src/js/*.js --format=esm --bundle=true --splitting=true --outdir=public/js --minify=true"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "esbuild": "^0.20.2",
+    "ncp": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.2.5",
+    "sass": "^1.72.0"
+  }
+}

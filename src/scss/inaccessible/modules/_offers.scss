@@ -1,0 +1,77 @@
+@use "../../global" as *;
+
+.offers {
+  background-color: var(--white);
+  padding: 0 var(--safe-zone);
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    gap: 40px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  &__heading {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: var(--color-text-heading);
+  }
+
+  &__text {
+    text-align: center;
+    font-size: 20px;
+    color: var(--color-text);
+    max-width: 600px;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 0;
+    @media screen and (min-width: 480px) {
+      flex-direction: row;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: 300px;
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__item-heading {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--black);
+  }
+
+  &__item-text {
+    text-align: center;
+    font-size: 16px;
+    color: var(--gray-10);
+    line-height: 1.5;
+    span {
+      color: var(--gray-4);
+      font-style: italic;
+    }
+  }
+
+  &__item-price {
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    color: var(--color-primary);
+  }
+}

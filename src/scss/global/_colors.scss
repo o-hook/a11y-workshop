@@ -1,0 +1,63 @@
+:root {
+  /* main colors */
+  --color-primary: #4d84f4;
+  --color-primary-light: #81a7f2;
+  --color-primary-dark: #295eca;
+  --color-primary-bg: #262835;
+  --color-primary-bg-light: #3b3e53;
+
+  --color-accent: #f5414f;
+  --color-accent-light: #e48c93;
+  --color-accent-dark: #ba1f2c;
+  --color-accent-bg: #dc1e2e;
+
+  // shades - generated using chroma.js - 12 steps
+  --black: #1d1d21;
+  --gray-10: #2e2e31;
+  --gray-6: #7b7a7d;
+  --gray-4: #a5a5a6;
+  --gray-3: #bbbbbc;
+  --gray-2: #d1d0d2;
+  --gray-1: #e8e7e8;
+  --white: white;
+
+  /* feedback */
+  --color-success: #88c459;
+  --color-error: #f5414f;
+  --color-warning: #ffd137;
+
+  /* typography */
+  --color-text: var(--gray-10);
+  --color-text-heading: var(--black);
+  --color-text-subtle: var(--gray-6);
+  --color-link: var(--color-primary);
+  --color-link-visited: var(--color-primary-dark);
+  --color-mark: var(--color-accent-bg);
+  --color-blockquote-border: var(--gray-2);
+
+  /* border */
+  --color-border: var(--gray-2);
+
+  /* body */
+  --color-body: var(--white);
+
+  /* forms */
+  --form-element-border: var(--color-border);
+  --form-element-border-focus: var(--color-primary);
+  --form-element-border-error: var(--color-error);
+  --form-element-bg: var(--white);
+  --form-text-placeholder: var(--gray-4);
+
+  /* buttons */
+  --btn-primary-bg: var(--color-primary-dark);
+  --btn-primary-hover: var(--color-primary-light);
+  --btn-primary-active: var(--color-primary-dark);
+  --btn-primary-label: var(--white);
+
+  /* icons */
+  --color-icon-primary: var(--gray-4);
+  --color-icon-secondary: inherit;
+
+  /* box shadow */
+  --box-shadow-dark: rgba(16, 16, 16, 0.35) 0px 6px 10px;
+}

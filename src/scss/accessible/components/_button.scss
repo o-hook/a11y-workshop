@@ -1,0 +1,6 @@
+@use "../../global" as *;
+.button {
+  @include button-styles;
+  font-size: 1.125rem;
+  color: var(--btn-primary-label);
+}
