@@ -3,8 +3,8 @@
 Demo application of the accessibility workshop for developers.
 See also the deployed project with the 2 test pages:
 
-- [Inaccessible test page](https://tbd/inaccessible.html).
-- [Accessible test page](https://tbd/accessible.html).
+- [Inaccessible test page](https://o-hook.github.io/a11y-workshop/inaccessible.html).
+- [Accessible test page](https://o-hook.github.io/a11y-workshop/accessible.html).
 
 ---
 
