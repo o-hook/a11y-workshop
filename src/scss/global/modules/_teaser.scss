@@ -35,7 +35,7 @@
 
   &__heading {
     font-size: 70px;
-    font-weight: bold;
+    font-weight: normal;
     color: var(--white);
   }
 
@@ -59,6 +59,7 @@
   &__price-new {
     font-size: 30px;
     color: var(--color-accent);
+    font-weight: 500;
   }
 
   // &__rating {
@@ -105,6 +106,7 @@
   &__sizes {
     h2 {
       color: var(--white);
+      font-weight: 500;
     }
   }
 
@@ -121,6 +123,7 @@
     label {
       color: var(--white);
       border-radius: 2px;
+      font-weight: 500;
     }
   }
 }

@@ -12,10 +12,6 @@
   }
 
   &__logo {
-    color: var(--white);
-    text-decoration: none;
-    font-style: italic;
-    font-weight: lighter;
     a {
       display: block;
       width: 7%;
@@ -38,8 +34,8 @@
     a {
       color: var(--gray-2);
       text-decoration: none;
-      font-weight: bold;
       border-radius: 2px;
+      font-weight: 500;
       &.active {
         color: var(--color-primary-dark);
       }

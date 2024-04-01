@@ -3,7 +3,7 @@
 .special {
   background-color: var(--color-primary-bg);
   padding: 0 var(--safe-zone);
-    
+
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -38,7 +38,7 @@
   &__heading {
     text-align: center;
     font-size: 50px;
-    font-weight: bold;
+    font-weight: 500;
     color: var(--white);
   }
 
