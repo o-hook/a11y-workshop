@@ -1,0 +1,46 @@
+@use "../../global" as *;
+
+.teaser {
+  @include teaser;
+
+  .teaser__sizes {
+    h2 {
+      font-size: toRem(20);
+    }
+  }
+
+  &__sizes-group {
+    input {
+      &:focus + label {
+        outline: 2px solid var(--color-accent-light);
+        outline-offset: 2px;
+      }
+
+      &[aria-disabled="true"] + label {
+        position: relative;
+        color: var(--gray-6);
+        cursor: not-allowed;
+        &:before {
+          content: "";
+          position: absolute;
+          inset: 0;
+          width: 2px;
+          background-color: var(--gray-6);
+          left: 50%;
+          rotate: 45deg;
+        }
+      }
+      &:not([aria-disabled="true"]) + label:hover {
+        background-color: var(--color-primary);
+      }
+    }
+    label {
+      font-size: toRem(18);
+      padding: 10px;
+      color: black;
+      background-color: var(--gray-1);
+      cursor: pointer;
+      transition: background-color 0.2s ease-out;
+    }
+  }
+}

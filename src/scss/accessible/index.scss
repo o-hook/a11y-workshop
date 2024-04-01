@@ -1,7 +1,7 @@
-@use "../global";
+@use "../global" as *;
 @use "components";
+@use "modules";
 
 *:focus-visible {
-  outline: 2px solid var(--color-primary-dark);
-  outline-offset: 2px;
+  @include focusVisible;
 }

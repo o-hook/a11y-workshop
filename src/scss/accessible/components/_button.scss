@@ -3,4 +3,8 @@
   @include button-styles;
   font-size: 1.125rem;
   color: var(--btn-primary-label);
+  transition: background-color 0.2s ease-out;
+  &:hover {
+    background-color: var(--color-primary);
+  }
 }

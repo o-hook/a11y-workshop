@@ -1,0 +1,41 @@
+@use "../../global" as *;
+
+.header {
+  @include header;
+
+  // Accessible styles
+  &__logo {
+    font-size: toRem(40);
+  }
+
+  &__navigation {
+    a {
+      font-size: toRem(20);
+      position: relative;
+      transition: var(--transition-fast);
+      &:hover {
+        color: var(--color-primary-light);
+      }
+      &[aria-current="page"] {
+        color: var(--color-primary-light);
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background-color: var(--color-primary-light);
+          bottom: -4px;
+        }
+      }
+    }
+  }
+
+  &__meta {
+    .button {
+      img {
+        width: toRem(20);
+      }
+    }
+  }
+}

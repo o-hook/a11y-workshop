@@ -1,0 +1,62 @@
+@mixin header {
+  background-color: var(--color-primary-bg-light);
+  padding: 0 var(--safe-zone);
+
+  &__wrapper {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 16px 0;
+  }
+
+  &__logo {
+    color: var(--white);
+    text-decoration: none;
+    font-style: italic;
+    font-weight: lighter;
+    a {
+      display: block;
+      width: 7%;
+      min-width: 60px;
+      position: absolute;
+      left: 0;
+      border-radius: 2px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__navigation {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    a {
+      color: var(--gray-2);
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 2px;
+      &.active {
+        color: var(--color-primary-dark);
+      }
+    }
+  }
+
+  &__meta {
+    justify-self: end;
+    display: flex;
+    gap: 12px;
+
+    .button {
+      img {
+        display: block;
+        width: 20px;
+        height: auto;
+      }
+    }
+  }
+}
