@@ -1,0 +1,46 @@
+@mixin special {
+  background-color: var(--color-primary-bg);
+  padding: 0 var(--safe-zone);
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    gap: 40px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      padding: 80px 0;
+    }
+  }
+
+  &__image {
+    width: 70%;
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+
+  &__heading {
+    text-align: center;
+    font-weight: 500;
+    color: var(--white);
+  }
+
+  &__text {
+    text-align: center;
+    color: var(--white);
+  }
+}
