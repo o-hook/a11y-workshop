@@ -3,6 +3,10 @@
 .teaser {
   @include teaser;
 
+  &__heading {
+    font-size: toRem(70);
+  }
+
   .teaser__sizes {
     h2 {
       font-size: toRem(20);
