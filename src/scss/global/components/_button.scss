@@ -6,8 +6,13 @@
   background-color: var(--btn-primary-bg);
   color: var(--white);
   cursor: pointer;
-  font-size: 18px;
   border-radius: 2px;
   border: none;
   box-shadow: var(--box-shadow-dark);
+
+  &.-small {
+    padding: 8px 12px;
+    border-radius: 4px;
+    min-height: auto;
+  }
 }

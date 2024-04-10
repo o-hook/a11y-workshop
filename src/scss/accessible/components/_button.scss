@@ -7,4 +7,7 @@
   &:hover {
     background-color: var(--color-primary);
   }
+  &.-small {
+    font-size: toRem(16);
+  }
 }

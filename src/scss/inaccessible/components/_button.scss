@@ -2,4 +2,8 @@
 .button {
   @include button-styles;
   font-size: 18px;
+
+  &.-small {
+    font-size: 16px;
+  }
 }

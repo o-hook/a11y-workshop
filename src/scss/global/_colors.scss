@@ -2,6 +2,7 @@
   /* main colors */
   --color-primary: #4d84f4;
   --color-primary-light: #86abf6;
+  --color-primary-superlight: #eaf1ff;
   --color-primary-dark: #295eca;
   --color-primary-bg: #262835;
   --color-primary-bg-light: #3b3e53;
@@ -18,7 +19,7 @@
   --gray-4: #a5a5a6;
   --gray-3: #bbbbbc;
   --gray-2: #d1d0d2;
-  --gray-1: #fcfcfc;
+  --gray-1: #f0eff2;
   --white: white;
 
   /* feedback */
@@ -60,4 +61,5 @@
 
   /* box shadow */
   --box-shadow-dark: rgba(16, 16, 16, 0.35) 0px 6px 10px;
+  --box-shadow-mid: rgba(16, 16, 16, 0.15) 0px 6px 10px;
 }
