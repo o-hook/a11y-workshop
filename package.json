@@ -40,8 +40,8 @@
     "build": "run-s eleventy:build sass:build js:build",
     "eleventy:dev": "eleventy --serve",
     "eleventy:build": "eleventy",
-    "sass:dev": "sass --watch --update --embed-source-map --style=expanded --load-path=node_modules src/scss/accessible/index.scss:public/styles/accessible/styles.css & sass --watch --update --embed-source-map --style=expanded --load-path=node_modules src/scss/inaccessible/index.scss:public/styles/inaccessible/styles.css",
-    "sass:build": "sass --no-source-map --style=compressed --load-path=node_modules src/scss/accessible/index.scss:public/styles/accessible/styles.css & sass --no-source-map --style=compressed --load-path=node_modules src/scss/inaccessible/index.scss:public/styles/inaccessible/styles.css",
+    "sass:dev": "sass --watch --update --embed-source-map --style=expanded --load-path=node_modules src/scss:public/styles",
+    "sass:build": "sass --no-source-map --style=compressed --load-path=node_modules src/scss:public/styles",
     "js:dev": "esbuild src/js/*.js --format=esm --bundle=true --splitting=true --outdir=public/js --watch --sourcemap=inline",
     "js:build": "esbuild src/js/*.js --format=esm --bundle=true --splitting=true --outdir=public/js --minify=true"
   },
