@@ -28,5 +28,11 @@
   &__text {
     text-align: center;
     margin-top: 40px;
+    font-style: italic;
+    &-cite {
+      display: block;
+      margin-top: 12px;
+      font-style: normal;
+    }
   }
 }

@@ -5,3 +5,8 @@
 *:focus-visible {
   @include focusVisible;
 }
+
+* {
+  // dynamic line-height calculation
+  line-height: calc(0.5rem + 1em);
+}

@@ -1,0 +1,39 @@
+@use "../../global" as *;
+
+.footer {
+  @include footer;
+
+  &__heading {
+    font-size: toRem(18);
+  }
+
+  &__list {
+    a {
+      font-size: toRem(14);
+      transition: color var(--transition-fast);
+      &:hover {
+        text-decoration: underline;
+        color: var(--color-primary-light);
+      }
+    }
+  }
+
+  &__copyright {
+    font-size: toRem(12);
+    color: var(--gray-1);
+  }
+
+  &__social {
+    gap: 12px;
+
+    a {
+      width: toRem(32);
+      height: toRem(32);
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

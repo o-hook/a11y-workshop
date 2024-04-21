@@ -33,6 +33,11 @@
       flex-direction: row;
     }
   }
+  &__item-wrapper {
+    background-color: var(--gray-1);
+    border-radius: 16px;
+    box-shadow: var(--box-shadow-mid);
+  }
   &__item {
     display: flex;
     flex-direction: column;
@@ -40,9 +45,9 @@
     gap: 12px;
     max-width: 300px;
     border-radius: 16px;
-    background-color: var(--gray-1);
     padding: 16px;
-    box-shadow: var(--box-shadow-mid);
+    height: 100%;
+    text-decoration: none;
     img {
       display: block;
       width: 100%;
@@ -68,10 +73,5 @@
     font-weight: bold;
     text-align: center;
     color: var(--color-primary);
-  }
-  .button {
-    margin-top: auto;
-    position: relative;
-    z-index: 1;
   }
 }

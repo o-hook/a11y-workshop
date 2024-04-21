@@ -46,67 +46,27 @@
   &__price {
     display: flex;
     gap: 20px;
-    align-items: center;
+    align-items: baseline;
+    padding: 12px 0;
   }
 
   &__price-old {
-    font-size: 20px;
-    color: var(--color-primary-light);
     text-decoration: line-through;
   }
 
   &__price-new {
-    font-size: 30px;
     color: var(--color-accent);
     font-weight: 500;
   }
 
-  // &__rating {
-  //   display: flex;
-  //   flex-direction: row-reverse;
-  //   justify-content: flex-end;
-  //   input {
-  //     opacity: 0;
-  //     pointer-events: none;
-  //   }
-
-  //   label {
-  //     cursor: pointer;
-  //     font-size: 0;
-  //     color: var(--gray-8);
-  //     transition: color 0.1s ease-in-out;
-  //   }
-
-  //   label:before {
-  //     content: "★";
-  //     // display: inline-block;
-  //     font-size: 24px;
-  //   }
-
-  //   input:checked ~ label {
-  //     color: #ffc700;
-  //     color: gold;
-  //   }
-
-  //   label:hover,
-  //   label:hover ~ label {
-  //     color: goldenrod;
-  //   }
-
-  //   input:checked + label:hover,
-  //   input:checked + label:hover ~ label,
-  //   input:checked ~ label:hover,
-  //   input:checked ~ label:hover ~ label,
-  //   label:hover ~ input:checked ~ label {
-  //     color: darkgoldenrod;
-  //   }
-  // }
-
   &__sizes {
-    h2 {
-      color: var(--white);
-      font-weight: 500;
+    fieldset {
+      all: unset;
     }
+  }
+  &__sizes-heading {
+    color: var(--white);
+    font-weight: 500;
   }
 
   &__sizes-group {

@@ -7,10 +7,14 @@
       />
     </div>
     <article class="teaser__content">
-      <h1 class="teaser__heading" id="heading-air-force-one">Mike Air Force ONE</h1>
-      <p class="teaser__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+      <h1 class="teaser__heading" id="heading-air-force-one">Mike Air Huarache - Special Edition</h1>
+      <p class="teaser__text">
+        The legendary must have shoe in a limited special edition. Get it now for the best price!
+      </p>
       <div class="teaser__sizes">
-        <h2 id="heading-sizes">Choose size:</h2>
+        <fieldset>
+          <legend class="teaser__sizes-heading" id="heading-sizes">Choose size:</legend>
+        </fieldset>
         <div class="teaser__sizes-group" role="group" aria-describedby="heading-sizes">
           <input type="radio" id="size-36" name="size" value="36" />
           <label for="size-36">36</label>
@@ -27,12 +31,59 @@
         </div>
       </div>
       <div class="teaser__price">
+        <div class="teaser__price-new" id="price-new"><span class="-sr-only">Reduced price: </span>99.- €</div>
         <s class="teaser__price-old"><span class="-sr-only">Original price: </span>159.- €</s>
-        <div class="teaser__price-new"><span class="-sr-only">Reduced price: </span>99.- €</div>
       </div>
       <div>
-        <button type="button" class="button" aria-describedby="heading-air-force-one">Add to cart</button>
+        <button type="button" class="button" aria-describedby="heading-air-force-one price-new">Add to cart</button>
+        <p aria-live="alert" id="cart-hint" class="-sr-only"></p>
       </div>
     </article>
   </div>
 </section>
+<script>
+  const cartButton = document.querySelector(".teaser .button");
+  const radioButtons = document.querySelectorAll('.teaser input[type="radio"]');
+  const cartHint = document.getElementById("cart-hint");
+
+  radioButtons.forEach((radioButton) => {
+    radioButton.addEventListener("change", (event) => {
+      const selectedSize = event.target.value;
+      const isSizeAvailable = event.target.getAttribute("aria-disabled") !== "true";
+
+      if (isSizeAvailable) {
+        cartButton.removeAttribute("aria-disabled");
+        cartButton.setAttribute("aria-describedby", "heading-air-force-one price-new");
+        cartButton.removeAttribute("aria-label");
+      } else {
+        cartButton.setAttribute("aria-disabled", "true");
+        cartButton.removeAttribute("aria-describedby");
+        cartButton.setAttribute("aria-label", "Size " + selectedSize + " not available. Please choose another size.");
+      }
+    });
+  });
+
+  cartButton.addEventListener("click", () => {
+    const selectedSize = () => {
+      const checkedRadioButton = document.querySelector('.teaser input[type="radio"]:checked');
+      return checkedRadioButton ? checkedRadioButton.value : false;
+    };
+
+    const clearCartHint = () => {
+      setTimeout(() => {
+        cartHint.textContent = "";
+      }, 3000);
+    };
+
+    if (selectedSize() === false) {
+      cartHint.textContent = "Please select a size before adding to cart.";
+      clearCartHint();
+    } else if (cartButton.getAttribute("aria-disabled") === "true") {
+      cartHint.textContent = "Size " + selectedSize() + " not available. Please choose another size.";
+      clearCartHint();
+    } else {
+      cartHint.textContent = "Mike Air Huarache in size " + selectedSize() + ", added to cart";
+      clearCartHint();
+    }
+  });
+</script>

@@ -1,53 +1,20 @@
 @use "../../global" as *;
 
 .footer {
-  background-color: var(--color-primary-bg-light);
-  padding: 0 var(--safe-zone);
+  @include footer;
 
-  &__wrapper {
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    align-items: center;
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 12px 0;
+  &__heading {
+    font-size: 18px;
+  }
 
-    @media screen and (min-width: 768px) {
-      grid-template-rows: none;
-      grid-template-columns: 1fr 1fr 1fr;
+  &__list {
+    a {
+      font-size: 14px;
     }
   }
 
   &__copyright {
     font-size: 12px;
     color: var(--gray-4);
-    font-weight: lighter;
-  }
-
-  &__social {
-    justify-content: center;
-    display: flex;
-    gap: 12px;
-
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-    }
-  }
-
-  &__service {
-    justify-self: end;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    color: var(--white);
-
-    a {
-      font-size: 12px;
-      color: var(--white);
-    }
   }
 }

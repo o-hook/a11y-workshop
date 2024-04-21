@@ -13,19 +13,14 @@
 
   &__item {
     position: relative;
-    transition: var(--transition-slow);
+    transition: background-color var(--transition-slow);
     &:hover {
       background-color: var(--color-primary-superlight);
     }
   }
 
   &__item-overlay {
-    position: absolute;
-    inset: 0;
     border-radius: 16px;
-    &:focus-visible {
-      outline: none;
-    }
   }
 
   &__item-heading {
@@ -34,9 +29,9 @@
 
   &__item-text {
     font-size: toRem(16);
-    line-height: 1.5;
     span {
       color: var(--gray-6);
+      font-size: toRem(14);
     }
   }
 

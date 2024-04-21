@@ -4,26 +4,44 @@
   @include teaser;
 
   &__heading {
-    font-size: toRem(70);
+    font-size: toRem(64);
   }
 
-  .teaser__sizes {
-    h2 {
-      font-size: toRem(20);
-    }
+  &__sizes-heading {
+    font-size: toRem(20);
   }
 
   &__sizes-group {
+    label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: toRem(18);
+      padding: 10px;
+      min-height: 48px;
+      min-width: 48px;
+      color: black;
+      background-color: var(--gray-1);
+      cursor: pointer;
+      transition: background-color 0.2s ease-out;
+    }
+
     input {
-      &:focus + label {
+      &:focus-visible + label {
         outline: 2px solid var(--color-accent-light);
         outline-offset: 2px;
+      }
+
+      &:checked + label {
+        background-color: var(--color-primary);
+        color: var(--white);
       }
 
       &[aria-disabled="true"] + label {
         position: relative;
         color: var(--gray-6);
         cursor: not-allowed;
+        pointer-events: none;
         &:before {
           content: "";
           position: absolute;
@@ -38,13 +56,23 @@
         background-color: var(--color-primary);
       }
     }
-    label {
-      font-size: toRem(18);
-      padding: 10px;
-      color: black;
-      background-color: var(--gray-1);
-      cursor: pointer;
-      transition: background-color 0.2s ease-out;
+  }
+
+  &__price-old {
+    color: var(--color-primary-light);
+    font-size: toRem(20);
+  }
+
+  &__price-new {
+    font-size: toRem(36);
+  }
+
+  .button {
+    &[aria-disabled="true"] {
+      background-color: var(--gray-6);
+      color: var(--white);
+      cursor: not-allowed;
+      pointer-events: none;
     }
   }
 }

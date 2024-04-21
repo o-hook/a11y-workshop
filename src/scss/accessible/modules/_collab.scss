@@ -10,5 +10,10 @@
   &__text {
     font-size: toRem(20);
     color: var(--gray-6);
+
+    &-cite {
+      color: var(--gray-10);
+      font-size: toRem(16);
+    }
   }
 }

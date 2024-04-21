@@ -10,5 +10,9 @@
   &__text {
     font-size: 20px;
     color: var(--gray-4);
+    &-cite {
+      color: var(--gray-10);
+      font-size: 12px;
+    }
   }
 }
