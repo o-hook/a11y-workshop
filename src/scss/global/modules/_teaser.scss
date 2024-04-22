@@ -18,7 +18,9 @@
   }
 
   &__image {
-    width: 50%;
+    @media screen and (min-width: 768px) {
+      width: 50%;
+    }
     img {
       display: block;
       max-width: 100%;
@@ -31,7 +33,9 @@
     flex-direction: column;
     justify-content: center;
     gap: 20px;
-    width: 50%;
+    @media screen and (min-width: 768px) {
+      width: 50%;
+    }
   }
 
   &__heading {

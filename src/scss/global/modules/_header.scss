@@ -5,10 +5,14 @@
   &__wrapper {
     position: relative;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    gap: 12px;
+    grid-template-columns: 1fr 1fr auto;
     max-width: var(--max-width);
     margin: 0 auto;
     padding: 16px 0;
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 
   &__logo {
@@ -27,10 +31,40 @@
   }
 
   &__navigation {
-    justify-self: center;
-    display: flex;
-    align-items: center;
-    gap: 16px;
+    justify-self: flex-end;
+    align-self: center;
+
+    @media screen and (min-width: 768px) {
+      justify-self: center;
+    }
+    &-toggle {
+      all: revert;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      min-height: 48px;
+      min-width: 48px;
+      border: 2px solid var(--btn-primary-bg);
+      border-radius: 2px;
+      color: var(--white);
+      svg {
+        fill: var(--white);
+      }
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+
+    &-items {
+      align-items: center;
+      gap: 16px;
+      display: none;
+      @media screen and (min-width: 768px) {
+        display: flex;
+      }
+    }
+
     a {
       color: var(--gray-2);
       text-decoration: none;

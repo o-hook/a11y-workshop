@@ -3,12 +3,28 @@
     <div class="header__logo">
       <a href="#"><img src="./assets/img/logo.svg" alt="Mike Shoes" /></a>
     </div>
-    <nav class="header__navigation">
-      <a href="#" class="active" aria-current="page">Mens</a>
-      <a href="#">Womens</a>
-      <a href="#">Kids</a>
-      <a href="#">Sport</a>
-      <a href="#">Sale</a>
+    <nav aria-label="Main navigation" class="header__navigation" id="header-navigation">
+      <button
+        type="button"
+        class="header__navigation-toggle"
+        aria-label="Main Menu"
+        aria-expanded="false"
+        aria-hasepopup="true"
+        aria-controls="header-navigation"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="32px" width="32px" aria-hidden="true">
+          <path
+            d="M4,10h24c1.104,0,2-0.896,2-2s-0.896-2-2-2H4C2.896,6,2,6.896,2,8S2.896,10,4,10z M28,14H4c-1.104,0-2,0.896-2,2  s0.896,2,2,2h24c1.104,0,2-0.896,2-2S29.104,14,28,14z M28,22H4c-1.104,0-2,0.896-2,2s0.896,2,2,2h24c1.104,0,2-0.896,2-2  S29.104,22,28,22z"
+          />
+        </svg>
+      </button>
+      <div class="header__navigation-items">
+        <a href="#" class="active" aria-current="page">Men's</a>
+        <a href="#">Women's</a>
+        <a href="#">Kid's</a>
+        <a href="#">Sport</a>
+        <a href="#">Sale</a>
+      </div>
     </nav>
     <div class="header__meta">
       <button type="button" class="button">Login</button>

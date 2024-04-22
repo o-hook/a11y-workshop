@@ -16,15 +16,18 @@ permalink: "/accessible.html"
     />
     <link rel="stylesheet" href="./styles/accessible/index.css" />
   </head>
-  <body class="ks-accessible">
-    <main id="app">
+  <body>
+    <div id="app">
       <!-- prettier-ignore -->
       {% include "accessible/modules/header.html" %}
-      {% include "accessible/modules/teaser.html" %}
-      {% include "accessible/modules/collab.html" %}
-      {% include "accessible/modules/special.html" %}
-      {% include "accessible/modules/offers.html" %}
+      <main>
+        <!-- prettier-ignore -->
+        {% include "accessible/modules/teaser.html" %} 
+        {% include "accessible/modules/collab.html" %} 
+        {% include "accessible/modules/special.html" %} 
+        {% include "accessible/modules/offers.html" %}
+      </main>
       {% include "accessible/modules/footer.html" %}
-    </main>
+    </div>
   </body>
 </html>

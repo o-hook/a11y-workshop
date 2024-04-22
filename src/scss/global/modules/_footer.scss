@@ -10,11 +10,10 @@
 
   &__grid {
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 24px;
 
     @media screen and (min-width: 768px) {
-      grid-template-rows: none;
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 

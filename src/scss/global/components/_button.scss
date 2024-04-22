@@ -1,4 +1,5 @@
 @mixin button-styles {
+  all: revert;
   display: inline-flex;
   align-items: center;
   min-height: 48px;
