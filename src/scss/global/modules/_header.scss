@@ -94,6 +94,7 @@
 
     .item-amount {
       opacity: 0;
+      transform: scale3d(0, 0, 0);
       position: absolute;
       text-align: center;
       line-height: 1;
@@ -102,9 +103,12 @@
       color: var(--white);
       background-color: var(--color-accent-bg);
       border-radius: 50%;
-      transition: opacity var(--transition-fast);
+      transition:
+        opacity var(--transition-fast),
+        transform var(--transition-fast);
       &.-visible {
         opacity: 1;
+        transform: scale3d(1, 1, 1);
       }
     }
   }
