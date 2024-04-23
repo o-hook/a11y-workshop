@@ -29,7 +29,23 @@
         <div class="teaser__price-old">159.- €</div>
         <div class="teaser__price-new">99.- €</div>
       </div>
-      <div><button type="button" class="button" onclick="javascript: alert('Added to cart ✅');">Add</button></div>
+      <div>
+        <button type="button" class="button" id="cart-button">Add</button>
+      </div>
     </div>
   </div>
 </div>
+<script>
+  const cartButton = document.getElementById("cart-button");
+  const itemAmount = document.getElementById("item-amount");
+
+  const updateItemAmount = (amount) => {
+    itemAmount.classList.add("-visible");
+    itemAmount.textContent = amount;
+  };
+
+  cartButton.addEventListener("click", () => {
+    const amount = parseInt(itemAmount.textContent) + 1;
+    updateItemAmount(amount);
+  });
+</script>

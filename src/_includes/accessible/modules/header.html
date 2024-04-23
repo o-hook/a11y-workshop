@@ -1,7 +1,9 @@
 <header class="header">
   <div class="header__wrapper">
     <div class="header__logo">
-      <a href="#"><img src="./assets/img/logo.svg" alt="Mike Shoes" /></a>
+      <a href="#" onclick="javascript: alert('Back to Homepage 🏠'); return false;"
+        ><img src="./assets/img/logo.svg" alt="Mike Shoes"
+      /></a>
     </div>
     <nav aria-label="Main navigation" class="header__navigation" id="header-navigation">
       <button
@@ -11,7 +13,7 @@
         aria-expanded="false"
         aria-hasepopup="true"
         aria-controls="header-navigation"
-        onclick="javascript: alert('Burger Menu');"
+        onclick="javascript: alert('Burger Menu 🍔'); return false;"
       >
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" height="32px" width="32px" aria-hidden="true">
           <path
@@ -28,8 +30,29 @@
       </div>
     </nav>
     <div class="header__meta">
-      <button type="button" class="button">Login</button>
-      <button type="button" class="button"><img src="./assets/icons/cart.svg" alt="Shopping cart" /></button>
+      <button type="button" class="button login-button" onclick="javascript: alert('Login Dialog 🔐'); return false;">
+        Login
+      </button>
+      <a
+        href="#"
+        aria-live="polite"
+        class="button cart-link"
+        onclick="javascript: alert('Link to Shopping Cart Site 🛒'); return false;"
+      >
+        <img src="./assets/icons/cart.svg" alt="Shopping cart" />
+        <span class="item-amount" id="item-amount">0</span>
+        <span class="-sr-only">items</span>
+      </a>
     </div>
   </div>
 </header>
+<script>
+  const navLinks = document.querySelectorAll(".header__navigation-items a");
+  navLinks.forEach((navLink) => {
+    navLink.addEventListener("click", (event) => {
+      text = event.target.textContent;
+      alert(`Navigating to ${text}`);
+      event.preventDefault();
+    });
+  });
+</script>

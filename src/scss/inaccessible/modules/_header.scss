@@ -14,10 +14,18 @@
   }
 
   &__meta {
-    .button {
+    .cart-link {
       img {
         width: 20px;
       }
+    }
+
+    .item-amount {
+      top: -6px;
+      right: -6px;
+      font-size: 14px;
+      width: 18px;
+      height: 18px;
     }
   }
 }

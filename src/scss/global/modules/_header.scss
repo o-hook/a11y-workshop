@@ -81,11 +81,30 @@
     display: flex;
     gap: 12px;
 
-    .button {
+    .cart-link {
       img {
         display: block;
-        width: 20px;
         height: auto;
+      }
+    }
+
+    .cart-link {
+      position: relative;
+    }
+
+    .item-amount {
+      opacity: 0;
+      position: absolute;
+      text-align: center;
+      line-height: 1;
+      font-weight: 500;
+      border: 1px solid var(--white);
+      color: var(--white);
+      background-color: var(--color-accent-bg);
+      border-radius: 50%;
+      transition: opacity var(--transition-fast);
+      &.-visible {
+        opacity: 1;
       }
     }
   }

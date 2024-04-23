@@ -35,16 +35,19 @@
         <s class="teaser__price-old"><span class="-sr-only">Original price: </span>159.- €</s>
       </div>
       <div>
-        <button type="button" class="button" aria-describedby="heading-air-force-one price-new">Add to cart</button>
-        <p role="status" id="cart-hint" class="-sr-only"></p>
+        <button type="button" class="button" id="cart-button" aria-describedby="heading-air-force-one price-new">
+          Add to cart
+        </button>
+        <p role="status" id="teaser-cart-hint" class="-sr-only"></p>
       </div>
     </article>
   </div>
 </section>
 <script>
-  const cartButton = document.querySelector(".teaser .button");
+  const cartButton = document.getElementById("cart-button");
   const radioButtons = document.querySelectorAll('.teaser input[type="radio"]');
-  const cartHint = document.getElementById("cart-hint");
+  const cartHint = document.getElementById("teaser-cart-hint");
+  const itemAmount = document.getElementById("item-amount");
 
   radioButtons.forEach((radioButton) => {
     radioButton.addEventListener("change", (event) => {
@@ -63,18 +66,23 @@
     });
   });
 
+  const clearCartHint = () => {
+    setTimeout(() => {
+      cartHint.textContent = "";
+    }, 3000);
+  };
+
+  const selectedSize = () => {
+    const checkedRadioButton = document.querySelector('.teaser input[type="radio"]:checked');
+    return checkedRadioButton ? checkedRadioButton.value : false;
+  };
+
+  const updateItemAmount = (amount) => {
+    itemAmount.classList.add("-visible");
+    itemAmount.textContent = amount;
+  };
+
   cartButton.addEventListener("click", () => {
-    const selectedSize = () => {
-      const checkedRadioButton = document.querySelector('.teaser input[type="radio"]:checked');
-      return checkedRadioButton ? checkedRadioButton.value : false;
-    };
-
-    const clearCartHint = () => {
-      setTimeout(() => {
-        cartHint.textContent = "";
-      }, 3000);
-    };
-
     if (selectedSize() === false) {
       cartHint.textContent = "Please select a size before adding to cart.";
       clearCartHint();
@@ -83,6 +91,8 @@
       clearCartHint();
     } else {
       cartHint.textContent = "Mike Air Huarache in size " + selectedSize() + ", added to cart";
+      const amount = parseInt(itemAmount.textContent) + 1;
+      updateItemAmount(amount);
       clearCartHint();
     }
   });

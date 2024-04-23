@@ -32,10 +32,17 @@
   }
 
   &__meta {
-    .button {
+    .cart-link {
       img {
         width: toRem(20);
       }
+    }
+    .item-amount {
+      top: toRem(-6);
+      right: toRem(-6);
+      font-size: toRem(14);
+      width: toRem(18);
+      height: toRem(18);
     }
   }
 }

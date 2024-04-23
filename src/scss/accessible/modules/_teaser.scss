@@ -23,7 +23,9 @@
       color: black;
       background-color: var(--gray-1);
       cursor: pointer;
-      transition: background-color 0.2s ease-out;
+      transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast);
     }
 
     input {
@@ -33,7 +35,7 @@
       }
 
       &:checked + label {
-        background-color: var(--color-primary);
+        background-color: var(--color-primary-dark);
         color: var(--white);
       }
 
@@ -52,8 +54,9 @@
           rotate: 45deg;
         }
       }
-      &:not([aria-disabled="true"]) + label:hover {
+      &:not([aria-disabled="true"], :checked) + label:hover {
         background-color: var(--color-primary);
+        color: var(--white);
       }
     }
   }
