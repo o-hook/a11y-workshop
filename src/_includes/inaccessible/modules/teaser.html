@@ -35,17 +35,3 @@
     </div>
   </div>
 </div>
-<script>
-  const cartButton = document.getElementById("cart-button");
-  const itemAmount = document.getElementById("item-amount");
-
-  const updateItemAmount = (amount) => {
-    itemAmount.classList.add("-visible");
-    itemAmount.textContent = amount;
-  };
-
-  cartButton.addEventListener("click", () => {
-    const amount = parseInt(itemAmount.textContent) + 1;
-    updateItemAmount(amount);
-  });
-</script>

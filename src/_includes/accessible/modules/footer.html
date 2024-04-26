@@ -61,13 +61,3 @@
     <p class="footer__copyright">Copyright © Mike Shoes - all rights reserved 2024</p>
   </div>
 </footer>
-<script>
-  const footerLinks = document.querySelectorAll(".footer a");
-  footerLinks.forEach((footerLink) => {
-    footerLink.addEventListener("click", (event) => {
-      text = event.target.textContent !== "" ? event.target.textContent : event.target.alt;
-      alert(`Navigating to ${text} page 🚀`);
-      event.preventDefault();
-    });
-  });
-</script>

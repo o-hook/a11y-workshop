@@ -37,13 +37,3 @@
     </div>
   </div>
 </div>
-<script>
-  const offerLinks = document.querySelectorAll(".offers__item");
-  offerLinks.forEach((offerLink) => {
-    offerLink.addEventListener("click", (event) => {
-      text = offerLink.querySelector(".offers__item-heading").textContent;
-      alert(`Navigating to ${text} detail page 👟`);
-      event.preventDefault();
-    });
-  });
-</script>

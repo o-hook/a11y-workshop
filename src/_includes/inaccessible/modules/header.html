@@ -34,13 +34,3 @@
     </div>
   </div>
 </div>
-<script>
-  const navLinks = document.querySelectorAll(".header__navigation-items a");
-  navLinks.forEach((navLink) => {
-    navLink.addEventListener("click", (event) => {
-      text = event.target.textContent;
-      alert(`Navigating to ${text}`);
-      event.preventDefault();
-    });
-  });
-</script>
