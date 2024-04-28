@@ -78,4 +78,31 @@
       pointer-events: none;
     }
   }
+
+  &__cart {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+    &-hint {
+      font-size: toRem(16);
+      color: var(--color-accent-light);
+      display: flex;
+      gap: 4px;
+
+      &.-invalid {
+        &::before {
+          content: "!" / "";
+          color: var(--color-accent-light);
+        }
+        color: var(--color-accent-light);
+      }
+      &.-valid {
+        &::before {
+          content: "✓" / "";
+          color: var(--color-success);
+        }
+        color: var(--color-success);
+      }
+    }
+  }
 }

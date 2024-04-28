@@ -21,12 +21,6 @@ export const teaser = () => {
     });
   });
 
-  const clearCartHint = () => {
-    setTimeout(() => {
-      cartHint.innerText = "";
-    }, 3000);
-  };
-
   const selectedSize = () => {
     const checkedRadioButton = document.querySelector('.teaser input[type="radio"]:checked');
     return checkedRadioButton ? checkedRadioButton.value : false;
@@ -39,16 +33,19 @@ export const teaser = () => {
 
   cartButton.addEventListener("click", () => {
     if (selectedSize() === false) {
-      cartHint.innerText = "Please select a size before adding to cart.";
-      clearCartHint();
+      cartHint.classList.remove("-valid");
+      cartHint.classList.add("-invalid");
+      cartHint.innerText = "Please select a size before adding the item to cart.";
     } else if (cartButton.getAttribute("aria-disabled") === "true") {
+      cartHint.classList.remove("-valid");
+      cartHint.classList.add("-invalid");
       cartHint.innerText = "Size " + selectedSize() + " not available. Please choose another size.";
-      clearCartHint();
     } else {
+      cartHint.classList.remove("-invalid");
+      cartHint.classList.add("-valid");
       cartHint.innerText = "Mike Air Huarache in size " + selectedSize() + ", added to cart";
       const amount = parseInt(itemAmount.innerText) + 1;
       updateItemAmount(amount);
-      clearCartHint();
     }
   });
 };
