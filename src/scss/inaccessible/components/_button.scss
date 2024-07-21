@@ -1,7 +1,7 @@
 @use "../../global" as *;
 .button {
-  @include button-styles;
   font-size: 18px;
+  @include button-styles;
 
   &.-small {
     font-size: 16px;
