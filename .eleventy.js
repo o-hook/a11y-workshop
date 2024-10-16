@@ -1,4 +1,4 @@
-module.exports = function (eleventyConfig) {
+export default function (eleventyConfig) {
   // add passthrough
   eleventyConfig.addPassthroughCopy("./src/assets/");
   // watch scss files
@@ -17,4 +17,4 @@ module.exports = function (eleventyConfig) {
       layouts: "_layouts",
     },
   };
-};
+}
