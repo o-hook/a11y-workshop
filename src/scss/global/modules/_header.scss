@@ -16,13 +16,14 @@
   }
 
   &__logo {
-    a {
+    > :first-child {
       display: block;
       width: 7%;
       min-width: 60px;
       position: absolute;
       left: 0;
       border-radius: 2px;
+      cursor: pointer;
     }
     img {
       width: 100%;
@@ -70,6 +71,7 @@
       text-decoration: none;
       border-radius: 2px;
       font-weight: 500;
+      cursor: pointer;
       &.active {
         color: var(--color-primary-dark);
       }

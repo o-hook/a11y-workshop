@@ -34,7 +34,7 @@
         outline-offset: 2px;
       }
 
-      &:checked + label {
+      &:checked:not([aria-disabled="true"]) + label {
         background-color: var(--color-primary-dark);
         color: var(--white);
       }
